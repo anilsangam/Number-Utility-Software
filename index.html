@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div >
+        <h1 >All Operations on Number</h1>
+    </div>
+    
+    <div class="container"></div>
+    
+    Number: <div class="input-box">
+        <input type="text" id="d1" placeholder="Enter number or text">
+    </div>
+    <div class="buttons">
+    <button type="button" onclick="iseven()"> Check Even/Odd </button>
+    <!-- <button type="button" onclick="isodd()">Checkodd </button> -->
+    <button type="button" onclick="ispositive()">Check Positive/Negative </button><br>
+    <button type="button" onclick="isfactor()">Find Factor </button>
+    <button type="button" onclick="sumofnatural()">Sum of All Natural Number </button>
+    <button type="button" onclick="checkprime()">Check Prime</button>
+    <button type="button" onclick="checkpalindrome()">palindrome </button><br>
+    <button type="button" onclick="checkarmstrong()">Armstrong</button>
+    <button type="button" onclick="square()">Square </button>
+    <button type="button" onclick="cube()">cube </button>
+    <button type="button" onclick="squareroot()">Squareroot </button>
+    <button type="button" onclick="rootcube()">cube root </button>
+    <button type="button" onclick="factorial()">factorial </button>
+    <button type="button" onclick="table()">table </button><br><br>
+    </div>
+    Result:<div class="result-box">
+        <input type="text" id="res" placeholder="Result">
+    </div>
+    <div class="actions">
+        <button onclick="copy()">Copy</button>
+        <button onclick="cut()">Cut</button>
+        <button onclick="clr()">Clear</button>
+    </div>
+    </div>
+    <pre id="res1"></pre>
+    <script>
+        function iseven(){
+        let n=Number(document.getElementById("d1").value.trim())
+        if (n%2==0){
+            document.getElementById("res").value="even number"
+
+        }
+        else if(n%2!==0)
+        {
+        document.getElementById("res").value="odd number"
+        }
+        else{
+            document.getElementById("res").value="invalid input give a numerical input"
+
+        }
+     }
+    //  function isodd(){
+    //     let n=Number(document.getElementById("d1").value.trim())
+    //     if (n%2==0){
+    //         document.getElementById("res").value="even number"
+
+    //     }
+    //     else if(n%2==1)
+    //     {
+    //     document.getElementById("res").value="odd number"
+    //     }
+    //     else{
+    //         document.getElementById("res").value="invalid input give a numerical input"
+
+    //     }
+    //  }
+    function ispositive(){
+        let  n=Number(document.getElementById("d1").value.trim())
+        if (n>0){
+         document.getElementById("res").value="positive number"
+        }
+        else if(n===0){
+            document.getElementById("res").value="zero"
+        }
+        else{
+            document.getElementById("res").value="negative number"
+        }
+    }
+    function isfactor(){
+        let  n=Number(document.getElementById("d1").value.trim())
+        let count=" "
+        // for (let i in n) dont use this 
+        for(let i=1; i<=n; i++)
+        {
+            if(n%i==0 ){
+            count=count+i+","}
+         
+        }
+        document.getElementById("res").value=count
+
+        
+    }
+
+    function sumofnatural(){
+        sum=0
+        
+         n=Number(document.getElementById("d1").value.trim())
+         if(n<=0){
+            document.getElementById("res").value="not a natural number"
+         }
+         else{
+         for( let i=1; i<=n; i++){
+            sum=sum+i
+         }
+         document.getElementById("res").value=sum
+        }
+    }
+    function checkprime(){
+        n=Number(document.getElementById("d1").value.trim())
+        if (n <= 1) {     
+            document.getElementById("res").value = "Not Prime";
+            return;
+        }
+
+        for(let i=2; i<n;i++){
+            if(n%i==0){
+            
+                document.getElementById("res").value=" not Prime"
+                return;
+            }
+            
+                
+            
+        //  now correct
+        }
+        document.getElementById("res").value="Prime Number"
+    }
+    function table(){
+        let n=Number(document.getElementById("d1").value.trim())
+        let out=""
+        for(let i=1; i<=10; i++){
+            out=out+`${n}X${i}=${n*i}\n`
+        }
+        document.getElementById("res1").innerHTML=out
+    }
+    function checkpalindrome(){
+        let word=""
+        let num=document.getElementById("d1").value.trim()
+        for(let i=num.length-1;i>=0;i--){
+            word=word+num[i]
+           
+        }
+         if(word===num){
+                document.getElementById("res").value="Palindrome"
+            }
+            else{
+                document.getElementById("res").value=" Not Palindrome"
+            }
+
+    }
+    function checkarmstrong(){
+        let num=document.getElementById("d1").value.trim()
+        let digit=num.length
+        let num2
+        let n=Number(num)
+        let sum=0
+        for(i=0;i<digit;i++){
+        num2=Number(num[i]);
+        sum=sum+Math.pow(num2,digit)}
+        if (sum === n) {
+            document.getElementById("res").value="Yes armstrong"
+
+        } 
+        else {
+            document.getElementById("res").value="not armstrong"
+
+        }
+
+    }
+    function square(){
+        let n=Number(document.getElementById("d1").value.trim())
+        //  square=n**2
+         square=Math.pow(n,2)
+         document.getElementById("res").value="Square="+square
+
+
+
+    }
+
+    function squareroot(){
+        let n=Number(document.getElementById("d1").value.trim())
+         squareroot=Math.sqrt(n)
+         document.getElementById("res").value="Squareroot="+squareroot
+
+
+    }
+
+    function cube(){
+        let n=Number(document.getElementById("d1").value.trim())
+            cube=n**3
+            document.getElementById("res").value="Cube="+cube
+    }
+    function rootcube(){
+        let n=Number(document.getElementById("d1").value.trim())
+            rootcube=Math.cbrt(n)
+            document.getElementById("res").value="RootCube="+rootcube
+    }
+
+    function factorial(){
+        let n=Number(document.getElementById("d1").value.trim())
+            let fact=0
+            for (let i=0;i<=n;i++){
+                fact=fact*i
+            }
+            document.getElementById("res").value=fact
+
+    }
+
+
+
+// normal way
+    // function copy(){
+    //     let resdata=document.getElementById("res")
+    //     resdata.select()
+    //     document.execCommand("copy")
+    // }
+
+    // better way
+    function copy(){
+    let text = document.getElementById("res").value
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Copied successfully!")
+        })
+        
+
+
+    }
+    function cut(){
+         let resdata=document.getElementById("res")
+        resdata.select()
+        document.execCommand("cut")
+        
+        
+    }
+    function clr(){
+        document.getElementById("d1").value=""
+         document.getElementById("res").value=""
+          document.getElementById("res1").textContent=""
+    }
+
+    </script>
+</body>
+</html>

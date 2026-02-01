@@ -1,0 +1,121 @@
+/* ====== Global Reset ====== */
+* {
+    margin: 50;
+    padding: 0;
+    box-sizing:content-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+
+
+/* ====== Main Container ====== */
+/* .container {
+    background: #ffffff;
+    width:fit-content;
+    max-width: 750px;
+    padding: 25px;
+    align-self: center;
+    
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+} */
+
+/* ====== Heading ====== */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2c5364;
+    letter-spacing: 1px;
+}
+
+/* ====== Input Section ====== */
+/* .input-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+} */
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+
+button {
+    padding: 10px;
+    border-radius: 7px;
+    margin: 5px;
+    border:#f23434;
+    background: #2c5364;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: #203a43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ====== Result Section ====== */
+.result-box {
+    margin-bottom: 15px;
+}
+
+.result-box input {
+    background: #f4f6f8;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ====== Table Output ====== */
+pre {
+    background: #d8e1e4;
+    width: 220px;
+    color: #891313;
+
+    padding: 15px;
+    border-radius: 12px;
+    min-height: 120px;
+    overflow-x: auto;
+    font-size: 14px;
+}
+
+/* ====== Copy / Clear Buttons ====== */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.actions button {
+    background: #4caf50;
+}
+
+.actions button:nth-child(2) {
+    background: #ff9800;
+}
+
+.actions button:nth-child(3) {
+    background: #f44336;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+}
